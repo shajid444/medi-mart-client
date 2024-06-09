@@ -31,7 +31,7 @@ const Banner = () => {
                 className="mySwiper rounded-xl"
             >
                 <div className='text-center mb-20'>
-                    <SwiperSlide className='bg-cover'><img src="https://i.ibb.co/rkVZytT/paracetamol.jpg" alt="" /></SwiperSlide>
+                    <SwiperSlide className=''><img src="https://i.ibb.co/gT9pCGX/james-coleman-IMe6f-LWEu6-E-unsplash.jpg" alt="" /></SwiperSlide>
                     <SwiperSlide><img src="https://i.ibb.co/VtHtCgw/hal-gatewood-jb-Clos-Ds-D4-unsplash.jpg" alt="" /></SwiperSlide>
                     <SwiperSlide><img src="https://i.ibb.co/kcRKb4P/christine-sandu-jw-Wt-Zrm67-VI-unsplash.jpg" alt="" /></SwiperSlide>
                     <SwiperSlide>Slide 4</SwiperSlide>

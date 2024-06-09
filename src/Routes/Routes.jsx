@@ -3,6 +3,7 @@ import {
   } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home";
+import Modal from "../Pages/Shared/Modal/Modal";
 
   
 
@@ -14,6 +15,10 @@ import Home from "../Pages/Home/Home";
         {
             path:'/',
             element:<Home></Home>
+        },
+        {
+            path:'/modal',
+            element:<Modal></Modal>
         }
       ]
     },
