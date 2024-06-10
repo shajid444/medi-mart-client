@@ -1,6 +1,9 @@
+import { useParams } from "react-router-dom";
 
 
 const Modal = () => {
+    const {item} = useParams();
+    console.log(item);
     return (
         <div className="p-4 w-3/4 mx-auto shadow-xl bg-slate-300 ">
       

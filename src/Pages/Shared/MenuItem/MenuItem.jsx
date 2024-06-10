@@ -16,7 +16,7 @@ const MenuItem = ({item}) => {
           
             <button className="btn btn-success">Select</button>
 
-            <Link to='/modal' className="btn btn-outline btn-info">Info</Link>
+            <Link to={`/modal/${item}`} className="btn btn-outline btn-info">Info</Link>
             </div>
         </div>
     );

@@ -22,7 +22,7 @@ import Shop from "../Pages/Shop/Shop";
             element:<Home></Home>
         },
         {
-            path:'/modal',
+            path:'/modal/:item',
             element:<Modal></Modal>
         },
         {
