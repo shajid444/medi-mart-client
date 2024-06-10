@@ -4,6 +4,10 @@ import {
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home";
 import Modal from "../Pages/Shared/Modal/Modal";
+import SpecificCatagory from "../Pages/Shared/SpecificCatagory/SpecificCatagory";
+import SpcCapsule from "../Pages/Shared/SpecificCatagory/SpcCapsule";
+import SpcSyrup from "../Pages/Shared/SpecificCatagory/SpcSyrup";
+import SpcInjection from "../Pages/Shared/SpecificCatagory/SpcInjection";
 
   
 
@@ -19,6 +23,22 @@ import Modal from "../Pages/Shared/Modal/Modal";
         {
             path:'/modal',
             element:<Modal></Modal>
+        },
+        {
+            path:'/spc',
+            element:<SpecificCatagory></SpecificCatagory>
+        },
+        {
+            path:'/capsule',
+            element:<SpcCapsule></SpcCapsule>
+        },
+        {
+            path:'/syrup',
+            element:<SpcSyrup></SpcSyrup>
+        },
+        {
+            path:'/injection',
+            element:<SpcInjection></SpcInjection>
         }
       ]
     },
