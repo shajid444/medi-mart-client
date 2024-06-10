@@ -8,6 +8,7 @@ import SpecificCatagory from "../Pages/Shared/SpecificCatagory/SpecificCatagory"
 import SpcCapsule from "../Pages/Shared/SpecificCatagory/SpcCapsule";
 import SpcSyrup from "../Pages/Shared/SpecificCatagory/SpcSyrup";
 import SpcInjection from "../Pages/Shared/SpecificCatagory/SpcInjection";
+import Shop from "../Pages/Shop/Shop";
 
   
 
@@ -39,6 +40,10 @@ import SpcInjection from "../Pages/Shared/SpecificCatagory/SpcInjection";
         {
             path:'/injection',
             element:<SpcInjection></SpcInjection>
+        },
+        {
+            path:'/shop',
+            element:<Shop></Shop>
         }
       ]
     },
