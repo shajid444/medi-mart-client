@@ -28,7 +28,7 @@ const Banner = () => {
                 }}
                 navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}
-                className="mySwiper rounded-xl"
+                className="mySwiper rounded-xl h-[600px]"
             >
                 <div className='text-center mb-20'>
                     <SwiperSlide className=''><img src="https://i.ibb.co/gT9pCGX/james-coleman-IMe6f-LWEu6-E-unsplash.jpg" alt="" /></SwiperSlide>

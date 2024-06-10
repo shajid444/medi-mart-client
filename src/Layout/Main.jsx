@@ -8,15 +8,15 @@ const Main = () => {
     return (
         <div>
             <Helmet>
-        <title>Main page</title>
-  
-      </Helmet>
+                <title>Main page</title>
+
+            </Helmet>
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>
-            
+
         </div>
-        
+
     );
 };
 
