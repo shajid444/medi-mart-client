@@ -1,4 +1,5 @@
 
+import Alldata from '../Alldata/Alldata';
 import MenuItem from '../Shared/MenuItem/MenuItem';
 import Banner from './Banner/Banner';
 import Card from './Card/Card';
@@ -10,7 +11,8 @@ const Home = () => {
             <Banner></Banner>
             <Card></Card>
             <Catagory></Catagory>
-            <MenuItem></MenuItem>
+            {/* <MenuItem></MenuItem> */}
+            <Alldata></Alldata>
 
 
         </div>
