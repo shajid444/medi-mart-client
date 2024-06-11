@@ -2,16 +2,18 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { AuthContext } from '../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const SignUp = () => {
     const {
         register,
         handleSubmit,
+        reset,
         
         formState: { errors },
       } = useForm();
 
-      const {createUser} = useContext(AuthContext);
+      const {createUser, updateUserProfile} = useContext(AuthContext);
 
 
 
@@ -21,6 +23,28 @@ const SignUp = () => {
         .then(result =>{
             const loggedUser = result.user;
             console.log(loggedUser);
+            updateUserProfile(data.name, data.photo)
+            .then(() =>{
+                console.log('user profile info updated');
+                reset();
+                Swal.fire({
+                    title: "User created  Successfully",
+                    showClass: {
+                        popup: `
+                    animate__animated
+                    animate__fadeInUp
+                    animate__faster
+                  `
+                    },
+                    hideClass: {
+                        popup: `
+                    animate__animated
+                    animate__fadeOutDown
+                    animate__faster
+                  `
+                    }
+                });
+            })
         })
       };
 

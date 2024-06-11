@@ -11,6 +11,7 @@ import SpcInjection from "../Pages/Shared/SpecificCatagory/SpcInjection";
 import Shop from "../Pages/Shop/Shop";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
+import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
 
   
 
@@ -45,7 +46,9 @@ import SignUp from "../Pages/SignUp/SignUp";
         },
         {
             path:'/shop',
-            element:<Shop></Shop>
+            element:<PrivateRoute>
+                <Shop></Shop>
+            </PrivateRoute>
         },
         {
             path:'/login',
