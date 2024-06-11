@@ -1,10 +1,14 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const {signInUser} = useContext(AuthContext);
 
     const handleLogin = event =>{
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email
 
 
 
@@ -27,8 +31,8 @@ const Login = () => {
                 <h1 className="text-2xl font-bold text-center">Login</h1>
                 <form noValidate="" action="" className="space-y-6">
                     <div className="space-y-1 text-sm">
-                        <label htmlFor="username" className="block dark:text-gray-600">Username</label>
-                        <input type="text" name="username" id="username" placeholder="Username" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
+                        <label htmlFor="email" className="block dark:text-gray-600">email</label>
+                        <input type="text" name="email" id="email" placeholder="email" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
                     </div>
                     <div className="space-y-1 text-sm">
                         <label htmlFor="password" className="block dark:text-gray-600">Password</label>
@@ -60,7 +64,7 @@ const Login = () => {
                     </button>
                 </div>
                 <p className="text-xs text-center sm:px-6 dark:text-gray-600">Don't have an account?
-                    <a rel="noopener noreferrer" href="#" className="underline dark:text-gray-800">Sign up</a>
+                    <Link to ="/signup" rel="noopener noreferrer" href="#" className="underline dark:text-gray-800">Sign up</Link>
                 </p>
             </div>
         </div>
