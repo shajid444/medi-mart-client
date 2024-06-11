@@ -9,6 +9,8 @@ import SpcCapsule from "../Pages/Shared/SpecificCatagory/SpcCapsule";
 import SpcSyrup from "../Pages/Shared/SpecificCatagory/SpcSyrup";
 import SpcInjection from "../Pages/Shared/SpecificCatagory/SpcInjection";
 import Shop from "../Pages/Shop/Shop";
+import Login from "../Pages/Login/Login";
+import SignUp from "../Pages/SignUp/SignUp";
 
   
 
@@ -44,6 +46,14 @@ import Shop from "../Pages/Shop/Shop";
         {
             path:'/shop',
             element:<Shop></Shop>
+        },
+        {
+            path:'/login',
+            element:<Login></Login>
+        },
+        {
+            path:'/signup',
+            element:<SignUp></SignUp>
         }
       ]
     },
