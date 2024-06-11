@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 // import axios from "axios";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import axios from "axios";
+import useCart from "../../../hooks/useCart";
 
 
 const MenuItem = ({ item }) => {
@@ -13,9 +14,14 @@ const MenuItem = ({ item }) => {
 
     const axiosSecure = useAxiosSecure();
 
+    const [cart, refetch] = useCart();
+    console.log(cart);
 
-    const handleAddToCart = medicine => {
-        console.log(medicine, user.email);
+
+    const handleAddToCart = () => {
+
+
+        // console.log(medicine, user.email);
         if (user && user.email) {
             // todo
             const cartItem = {
@@ -37,6 +43,12 @@ const MenuItem = ({ item }) => {
                         showConfirmButton: false,
                         timer: 1500
                       });
+                    //   refetch cart to update the cart items count
+
+                    refetch();
+
+
+
                 }
             })
         }
@@ -69,7 +81,7 @@ const MenuItem = ({ item }) => {
                     ${item.price_per_unit}
                 </p>
 
-                <button onClick={() => handleAddToCart(item)} className="btn btn-success">Select</button>
+                <button onClick={handleAddToCart} className="btn btn-success">Select</button>
 
                 <Link to={`/modal/${item}`} className="btn btn-outline btn-info">Info</Link>
             </div>
