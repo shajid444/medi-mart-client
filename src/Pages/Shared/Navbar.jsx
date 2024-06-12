@@ -25,7 +25,7 @@ const Navbar = () => {
     <li><NavLink to="">Invoice Page</NavLink></li>
     {/* <li><NavLink to="/login">Login</NavLink></li> */}
     <li><NavLink to="/signup">Sign Up</NavLink></li>
-    <li><NavLink to="">
+    <li><NavLink to="/dashboard/cart">
       <button className="btn">
         <FaShoppingCart className="mr-4"></FaShoppingCart>
         <div className="badge badge-secondary">+{cart.length}</div>
@@ -75,7 +75,7 @@ const Navbar = () => {
                 <Link to='/' className="btn btn-sm btn-ghost"> Update Profile </Link>
               </li>
               <li>
-                <Link to='/' className="btn btn-sm btn-ghost">Dash Board </Link>
+                <Link to="/dashboard/cart" className="btn btn-sm btn-ghost">Dash Board </Link>
               </li>
               <li>
                 <button onClick={handleLogOut}>Log Out</button>

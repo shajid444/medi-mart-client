@@ -12,6 +12,8 @@ import Shop from "../Pages/Shop/Shop";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import Cart from "../Pages/Dashboard/Cart/Cart";
 
   
 
@@ -60,4 +62,15 @@ import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
         }
       ]
     },
+
+    {
+        path :'dashboard',
+        element: <Dashboard></Dashboard>,
+        children:[
+            {
+                path:'cart',
+                element:<Cart></Cart>
+            }
+        ]
+    }
   ]);
