@@ -1,35 +1,15 @@
-import { FaTrashAlt } from "react-icons/fa";
-import useCart from "../../../hooks/useCart";
-import Swal from "sweetalert2";
-import useAxiosSecure from "../../../hooks/useAxiosSecure";
-import useAuth from "../../../hooks/useAuth";
-import { Link } from "react-router-dom";
+import React from 'react';
+import useMenu from '../../../../hooks/useMenu';
+import { FaTrashAlt } from 'react-icons/fa';
+import Swal from 'sweetalert2';
+import useAxiosPublic from '../../../../hooks/useAxiosPublic';
+import { Link } from 'react-router-dom';
 
+const AllDataManagement = () => {
+    const [menu] = useMenu();
+    const axiosSecure = useAxiosPublic();
 
-const Cart = () => {
-    const [cart, refetch] = useCart();
-
-    const axiosSecure = useAxiosSecure();
-
-
-    // console.log(cart[0].email);
-    const { user } = useAuth();
-    // console.log(user.email);
-
-    const ownData = cart.filter(item => item.email === user.email);
-    // console.log(ownData);
-
-    // const totalPrice = ownData.reduce( (total, item) => total + item.price, 0);
-
-    const totalPrice = ownData.reduce((total, item) => {
-        const price = parseFloat(item.price);
-        return total + price;
-      }, 0);
-    // let totalPrice = 0;
-
-   
-    console.log(totalPrice);
-
+    // ---------------------
 
     const handleDelete = id => {
 
@@ -49,11 +29,11 @@ const Cart = () => {
 
 
 
-                axiosSecure.delete(`/cart/${id}`)
+                axiosSecure.delete(`/medicine/${id}`)
                     .then(res => {
                         if (res.data.deleteCount > 0) {
 
-                            refetch();
+                            // refetch();
                             Swal.fire({
                                 title: "Deleted!",
                                 text: "Your item has been deleted.",
@@ -68,27 +48,34 @@ const Cart = () => {
         });
     }
 
+
+    // -----------------
+
+
     return (
         <div>
 
-            <h2 className="text-6xl text-center mb-10"> Total Price ${totalPrice}</h2>
+            <h2 className="text-6xl"> all Data {menu.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
                     <thead>
                         <tr>
                             <th> </th>
+                            <th> </th>
 
                             <th>Name</th>
-                            <th>company</th>
-                            <th>price</th>
+                        
+                            <th></th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            ownData.map(item =>
+                            menu.map(item =>
                                 <tr key={item._id}>
+
+                                    <td> </td>
 
                                     <td>
                                         <div className="flex items-center gap-3">
@@ -103,8 +90,12 @@ const Cart = () => {
                                     <td>
                                         {item.name}
                                     </td>
-                                    <td>company</td>
-                                    <td>${item.price}</td>
+                            
+                                    <td>
+                                    <Link to ='/dashboard/update' className="btn btn-success">Update</Link>
+
+                                    </td>
+                                     
 
                                     <th>
                                         <button onClick={() => handleDelete(item._id)} className="btn btn-ghost btn-xs">
@@ -121,17 +112,10 @@ const Cart = () => {
 
                 </table>
             </div>
-            <div className="flex justify-end space-x-4 p-5">
-                <Link to ='/shop' type="button" className="px-6 py-2 border rounded-md dark:border-violet-600">Back
-                    <span className="sr-only sm:not-sr-only">to shop</span>
-                </Link>
-                <Link to ='/dashboard/checkout' type="button" className="px-6 py-2 border rounded-md dark:bg-violet-600 dark:text-gray-50 dark:border-violet-600">
-                    <span className="sr-only sm:not-sr-only">Continue to</span>Checkout
-                </Link>
-            </div>
+
 
         </div>
     );
 };
 
-export default Cart;
+export default AllDataManagement;

@@ -11,8 +11,21 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+import useAxiosPublic from '../../../hooks/useAxiosPublic';
+import { useQuery } from '@tanstack/react-query';
 
 const Banner = () => {
+    const axiosSecure = useAxiosPublic();
+
+    const { data: banner = [], refetch } = useQuery({
+
+        queryKey: ['banner'],
+        queryFn: async () => {
+            const res = await axiosSecure.get('/banner' );
+            return res.data;
+        }
+    })
+
     return (
         <>
             <Swiper
@@ -30,12 +43,10 @@ const Banner = () => {
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper rounded-xl h-[600px]"
             >
-                <div className='text-center mb-20'>
-                    <SwiperSlide className=''><img src="https://i.ibb.co/gT9pCGX/james-coleman-IMe6f-LWEu6-E-unsplash.jpg" alt="" /></SwiperSlide>
-                    <SwiperSlide><img src="https://i.ibb.co/VtHtCgw/hal-gatewood-jb-Clos-Ds-D4-unsplash.jpg" alt="" /></SwiperSlide>
-                    <SwiperSlide><img src="https://i.ibb.co/kcRKb4P/christine-sandu-jw-Wt-Zrm67-VI-unsplash.jpg" alt="" /></SwiperSlide>
-                    <SwiperSlide>Slide 4</SwiperSlide>
+                <div className='text-center mb-20 w-full'>
                    
+                    {banner.map(item => <SwiperSlide key={item._id}  className=''><img className='object-cover w-full' src={item.banner} alt="" /></SwiperSlide>)}
+                 
 
                 </div>
 

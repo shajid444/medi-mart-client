@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import axios from "axios";
 import useCart from "../../../hooks/useCart";
+import { FaEye } from "react-icons/fa";
 
 
 const MenuItem = ({ item }) => {
@@ -12,10 +13,12 @@ const MenuItem = ({ item }) => {
     const navigate = useNavigate();
     const location = useLocation();
 
+    // const itemDetails = item;
+
     const axiosSecure = useAxiosSecure();
 
     const [cart, refetch] = useCart();
-    console.log(cart);
+    // console.log(cart);
 
 
     const handleAddToCart = () => {
@@ -83,7 +86,10 @@ const MenuItem = ({ item }) => {
 
                 <button onClick={handleAddToCart} className="btn btn-success">Select</button>
 
-                <Link to={`/modal/${item}`} className="btn btn-outline btn-info">Info</Link>
+                <Link to={`/modal/${item}`} className="btn btn-outline btn-info">
+                    <FaEye></FaEye>
+                    
+                    Info</Link>
             </div>
         </div>
     );

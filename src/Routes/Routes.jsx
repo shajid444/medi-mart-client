@@ -14,6 +14,13 @@ import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import Cart from "../Pages/Dashboard/Cart/Cart";
+import AllUser from "../Pages/Dashboard/Admin/AllUser";
+import ManageCategory from "../Pages/Dashboard/Admin/ManageCategory";
+import PaymentHistory from './../Pages/Dashboard/Admin/PaymentHistory';
+import BannerManagement from './../Pages/Dashboard/Admin/BannerManagement';
+import AdminHome from './../Pages/Dashboard/Admin/AdminHome';
+import CheckOutPage from './../Pages/Dashboard/CheckOutPage/CheckOutPage';
+import Update from './../Pages/Dashboard/Admin/Update/Update';
 
   
 
@@ -64,12 +71,52 @@ import Cart from "../Pages/Dashboard/Cart/Cart";
     },
 
     {
-        path :'dashboard',
-        element: <Dashboard></Dashboard>,
+        path :'/dashboard',
+        element: <PrivateRoute>
+            <Dashboard></Dashboard>
+        </PrivateRoute>,
         children:[
             {
                 path:'cart',
                 element:<Cart></Cart>
+            },
+
+            // admin routes
+            {
+                path:'adminhome',
+                element:<AdminHome></AdminHome>,
+
+            },
+
+            {
+                path:'alluser',
+                element:<AllUser></AllUser>,
+
+            },
+            {
+                path:'managecategory',
+                element:<ManageCategory></ManageCategory>,
+
+            },
+            {
+                path:'paymenthistory',
+                element:<PaymentHistory></PaymentHistory>,
+
+            },
+            {
+                path:'bannermanagement',
+                element:<BannerManagement></BannerManagement>,
+
+            },
+            {
+                path:'checkout',
+                element:<CheckOutPage></CheckOutPage>,
+
+            },
+            {
+                path:'update',
+                element:<Update></Update>,
+
             }
         ]
     }
