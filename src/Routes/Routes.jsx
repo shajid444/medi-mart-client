@@ -117,6 +117,11 @@ import Update from './../Pages/Dashboard/Admin/Update/Update';
                 path:'update',
                 element:<Update></Update>,
 
+            },
+            {
+                path:'paymenthistory',
+                element:<PaymentHistory></PaymentHistory>,
+
             }
         ]
     }

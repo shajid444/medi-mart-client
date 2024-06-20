@@ -4,28 +4,24 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useAuth from "../../../hooks/useAuth";
 import { Link } from "react-router-dom";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 
 const Cart = () => {
     const [cart, refetch] = useCart();
 
-    const axiosSecure = useAxiosSecure();
+    const axiosSecure = useAxiosPublic();
 
 
-    // console.log(cart[0].email);
+
     const { user } = useAuth();
-    // console.log(user.email);
 
     const ownData = cart.filter(item => item.email === user.email);
-    // console.log(ownData);
-
-    // const totalPrice = ownData.reduce( (total, item) => total + item.price, 0);
 
     const totalPrice = ownData.reduce((total, item) => {
         const price = parseFloat(item.price);
         return total + price;
       }, 0);
-    // let totalPrice = 0;
 
    
     console.log(totalPrice);

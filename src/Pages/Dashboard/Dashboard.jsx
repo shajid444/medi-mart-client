@@ -10,7 +10,7 @@ const Dashboard = () => {
 
 // const{ isAdmin} = useAdmin();
 
-    const isAdmin = true;
+    const isAdmin = false;
     return (
         <div className="flex">
             {/* dashboard sidebar */}
@@ -63,7 +63,7 @@ const Dashboard = () => {
                                 </li>
 
                                 <li className="mb-5">
-                                    <NavLink to='/'>
+                                    <NavLink to='/dashboard/paymenthistory'>
                                         <FaMoneyBill></FaMoneyBill>
                                         Payment history </NavLink>
                                 </li>
