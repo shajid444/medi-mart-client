@@ -1,6 +1,7 @@
 import { FaAd, FaHome, FaList, FaMoneyBill, FaShoppingCart } from "react-icons/fa";
 import { FaPerson } from "react-icons/fa6";
 import { NavLink, Outlet } from "react-router-dom";
+import useAdmin from "../../hooks/useAdmin";
 
 // import useAdmin from "../../hooks/useAdmin";
 
@@ -8,9 +9,10 @@ import { NavLink, Outlet } from "react-router-dom";
 const Dashboard = () => {
     
 
-// const{ isAdmin} = useAdmin();
+const [isAdmin] = useAdmin();
+// console.log(isAdmin);
 
-    const isAdmin = false;
+    // const isAdmin = false;
     return (
         <div className="flex">
             {/* dashboard sidebar */}

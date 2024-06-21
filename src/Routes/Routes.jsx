@@ -16,11 +16,12 @@ import Dashboard from "../Pages/Dashboard/Dashboard";
 import Cart from "../Pages/Dashboard/Cart/Cart";
 import AllUser from "../Pages/Dashboard/Admin/AllUser";
 import ManageCategory from "../Pages/Dashboard/Admin/ManageCategory";
-import PaymentHistory from './../Pages/Dashboard/Admin/PaymentHistory';
+// import PaymentHistory from './../Pages/Dashboard/Admin/PaymentHistory';
 import BannerManagement from './../Pages/Dashboard/Admin/BannerManagement';
 import AdminHome from './../Pages/Dashboard/Admin/AdminHome';
 import CheckOutPage from './../Pages/Dashboard/CheckOutPage/CheckOutPage';
 import Update from './../Pages/Dashboard/Admin/Update/Update';
+import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 
   
 
@@ -117,12 +118,8 @@ import Update from './../Pages/Dashboard/Admin/Update/Update';
                 path:'update',
                 element:<Update></Update>,
 
-            },
-            {
-                path:'paymenthistory',
-                element:<PaymentHistory></PaymentHistory>,
-
             }
+           
         ]
     }
   ]);

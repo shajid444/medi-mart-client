@@ -3,10 +3,13 @@ import React, { useEffect, useState } from 'react';
 import useAxiosPublic from '../../../hooks/useAxiosPublic';
 import useCart from '../../../hooks/useCart';
 import useAuth from '../../../hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const CheckoutForm = () => {
 
-    const [cart] = useCart();
+    const [cart, refetch] = useCart();
+    const navigate = useNavigate();
 
     const [error, setError] = useState('');
     const [clientSecret, setClientSecret] = useState('');
@@ -104,6 +107,20 @@ const CheckoutForm = () => {
 
                 const res = await axiosSecure.post('/payments', payment);
                 console.log('payment saved', res.data);
+                refetch();
+
+                if(res.data?.paymentResult?.insertedId){
+
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Thank you for your payment",
+                        showConfirmButton: false,
+                        timer: 1500
+                      });
+
+                      navigate('/dashboard/paymenthistory')
+                }
             }
         }
 
