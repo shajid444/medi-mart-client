@@ -22,6 +22,7 @@ import AdminHome from './../Pages/Dashboard/Admin/AdminHome';
 import CheckOutPage from './../Pages/Dashboard/CheckOutPage/CheckOutPage';
 import Update from './../Pages/Dashboard/Admin/Update/Update';
 import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
+import PaymentManagement from './../Pages/Dashboard/Admin/PaymentManagement/PaymentManagement';
 
   
 
@@ -117,6 +118,11 @@ import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
             {
                 path:'update',
                 element:<Update></Update>,
+
+            },
+            {
+                path:'paymentManagement',
+                element:<PaymentManagement></PaymentManagement>,
 
             }
            

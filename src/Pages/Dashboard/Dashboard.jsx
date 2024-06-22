@@ -41,7 +41,7 @@ const [isAdmin] = useAdmin();
                                         manage category </NavLink>
                                 </li>
                                 <li className="mb-5">
-                                    <NavLink to='/dashboard/paymenthistory'>
+                                    <NavLink to='/dashboard/paymentManagement'>
                                         <FaMoneyBill></FaMoneyBill>
                                         Payment Management </NavLink>
                                 </li>
