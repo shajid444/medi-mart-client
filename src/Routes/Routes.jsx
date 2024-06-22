@@ -23,6 +23,7 @@ import CheckOutPage from './../Pages/Dashboard/CheckOutPage/CheckOutPage';
 import Update from './../Pages/Dashboard/Admin/Update/Update';
 import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 import PaymentManagement from './../Pages/Dashboard/Admin/PaymentManagement/PaymentManagement';
+import Error from "../Pages/Error/Error";
 
   
 
@@ -30,6 +31,7 @@ import PaymentManagement from './../Pages/Dashboard/Admin/PaymentManagement/Paym
     {
       path: "/",
       element: <Main></Main>,
+      errorElement:<Error></Error>,
       children:[
         {
             path:'/',
@@ -77,6 +79,7 @@ import PaymentManagement from './../Pages/Dashboard/Admin/PaymentManagement/Paym
         element: <PrivateRoute>
             <Dashboard></Dashboard>
         </PrivateRoute>,
+        errorElement:<Error></Error>,
         children:[
             {
                 path:'cart',

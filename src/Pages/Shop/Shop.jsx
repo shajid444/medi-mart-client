@@ -32,7 +32,7 @@ const Shop = () => {
                 <TabPanel>
                     <div className="grid gap-5 p-10 lg:grid-cols-2">
                         {
-                            syrup.map(item => <MenuItem key={item._id} item={item}></MenuItem>)
+                            capsule.map(item => <MenuItem key={item._id} item={item}></MenuItem>)
                         }
                     </div>
 
@@ -40,7 +40,7 @@ const Shop = () => {
                 <TabPanel>
                     <div className="grid gap-5 p-10 lg:grid-cols-2">
                         {
-                            capsule.map(item => <MenuItem key={item._id} item={item}></MenuItem>)
+                            syrup.map(item => <MenuItem key={item._id} item={item}></MenuItem>)
                         }
                     </div>
 

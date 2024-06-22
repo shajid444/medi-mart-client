@@ -1,18 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useAxiosPublic from '../../../hooks/useAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
 
 const AdminHome = () => {
     const axiosSecure = useAxiosPublic();
 
+    // const [stats, setStates] = useState();
+
+    // axiosSecure.get('/admin-stats')
+    // .then(res =>{
+    //     setStates(res.data);
+    //     // console.log(res.data);
+    // })
+
+    // console.log(stats);
+
+
     const {data : stats} = useQuery({
         queryKey:['admin-stats'],
         queryFn: async()=>{
             const res = await axiosSecure.get('/admin-stats');
+            console.log(res.data);
             return res.data;
+           
 
         }
     })
+
+    // console.log(stats);
 
 
     return (
@@ -41,7 +56,7 @@ const AdminHome = () => {
                         </svg>
                     </div>
                     <div className="flex flex-col justify-center align-middle">
-                        <p className="text-3xl font-semibold leading-none">{stats.users}</p>
+                    <p className="text-3xl font-semibold leading-none">{stats.users}</p>
                         <p className="capitalize">Users</p>
                     </div>
                 </div>
@@ -57,7 +72,7 @@ const AdminHome = () => {
                         </svg>
                     </div>
                     <div className="flex flex-col justify-center align-middle">
-                        <p className="text-3xl font-semibold leading-none">{stats.revenue}</p>
+                    <p className="text-3xl font-semibold leading-none">{stats.revenue}</p>
                         <p className="capitalize">Revenue</p>
                     </div>
                 </div>

@@ -79,7 +79,9 @@ const AuthProvider = ({ children }) => {
                 .then(res => {
                     if(res.data.token){
                         localStorage.setItem('access-token', res.data.token);
+                        setUser(currentUser);
                         setLoading(false);
+
 
                     }
                 })
@@ -89,13 +91,14 @@ const AuthProvider = ({ children }) => {
             else {
                 // todo
                 localStorage.removeItem('access-token');
+                setUser(null);
                 setLoading(false);
 
             }
             
         });
         return () => {
-            return unsubscribe();
+           return  unsubscribe();
         }
     }, [axiosPublic])
 

@@ -18,7 +18,11 @@ const MenuItem = ({ item }) => {
     const axiosSecure = useAxiosSecure();
 
     const [cart, refetch] = useCart();
+
+
     // console.log(cart);
+    // const item2 = cart.filter(it => item._id == it_id);
+    // console.log(item2);
 
 
     const handleAddToCart = () => {

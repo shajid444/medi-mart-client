@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 
 
 const Modal = () => {
-    const {item} = useParams();
+    const item = useParams();
      
     // const j = item.values;
     // const j = item.values(this.state.journal);
@@ -14,6 +14,7 @@ const Modal = () => {
         <div className="flex justify-between pb-4 border-bottom">
             <div className="flex items-center">
                 <a rel="noopener noreferrer" href="#" className="mb-0 capitalize text-3xl text-primary font-bold"> NAme</a>
+                <p className="ml-5">Vitamin D Capsule</p>
             </div>
 
         </div>
@@ -21,13 +22,13 @@ const Modal = () => {
             <div className="space-y-2">
                 <img src='https://i.ibb.co/hBxQB36/christina-victoria-craft-WHSnk-Iw-Wpec-unsplash.jpg' alt="" className="block object-cover h-full object-center w-full rounded-md h-96 dark:bg-gray-500" />
                 <div className="flex items-center text-base justify-around">
-                    <span className="bg-slate-400 p-3 rounded-lg">Price : </span>
+                    <span className="bg-slate-400 p-3 rounded-lg">Price : $ 5 </span>
                    
-                    <span className="bg-slate-400  p-3 rounded-lg">Quantity : </span>
+                    <span className="bg-slate-400  p-3 rounded-lg">Quantity :5 </span>
                 </div>
             </div>
             <div className="text-center bg-slate-300 p-5 rounded-md">
-               Description : 
+               Description : Used to relieve pain and reduce fever
             </div>
             <div className="space-y-2">
                 <a rel="noopener noreferrer" href="#" className="block">
@@ -38,10 +39,10 @@ const Modal = () => {
                 <div className="flex justify-between bg-slate-300 p-5 rounded-md">
                     
                     <p className="text-xl font-semibold ">
-                        #Made BY :
+                        #Made BY : Pharma Inc
                     </p>
                     <p className="text-xl font-semibold">
-                        #Catagory : 
+                        #Catagory : capsule
                     </p>
                   
                    

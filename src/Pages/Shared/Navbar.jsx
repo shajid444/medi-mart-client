@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { useContext } from "react";
+import { FaCartShopping } from "react-icons/fa6";
 // import { FaShoppingCart } from 'react-icons/fa';
 // import useCart from "../../hooks/useCart";
 
@@ -20,19 +21,11 @@ const Navbar = () => {
   const navLinks = <>
     <li><NavLink to="/">Home</NavLink></li>
     <li><NavLink to="/shop">Shop</NavLink></li>
-    <li><NavLink to="/dashboard/cart">Cart</NavLink></li>
-    <li><NavLink to="">Checkout Page</NavLink></li>
-    <li><NavLink to="">Invoice Page</NavLink></li>
-    {/* <li><NavLink to="/login">Login</NavLink></li> */}
-    <li><NavLink to="/signup">Sign Up</NavLink></li>
-    <li><NavLink to="/dashboard/alluser">USer</NavLink></li>
+    <li><NavLink to="/dashboard/cart">
+      <FaCartShopping></FaCartShopping>
+      Cart</NavLink></li>
 
-    {/* <li><NavLink to="/dashboard/cart">
-      <button className="btn">
-        <FaShoppingCart className="mr-4"></FaShoppingCart>
-        <div className="badge badge-secondary">+{cart.length}</div>
-      </button>
-    </NavLink></li> */}
+  
 
 
 
@@ -51,8 +44,8 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <div className="h-28 rounded-full w-28">
-          <img className="rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2KKiAXODCnf1OoNvhSzLxMIu2qC-yxKSI_g&s" alt="" />
+        <div className=" flex justify-center items-center ">
+          <h1 className="text-primary text-2xl font-bold">Medi Mart</h1>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex ml-40">
