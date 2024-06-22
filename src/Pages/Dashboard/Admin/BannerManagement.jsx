@@ -52,12 +52,21 @@ const BannerManagement = () => {
 
             <h1 className='text-3xl font-semibold text-center'>Enter the image url for Adding in the Banner </h1>
 
-            <h1>TOtal Banner {}</h1>
+        
             <form onSubmit={handleBanner} className='flex flex-col p-10 space-y-5' >
                 <label className="label">
                     <span className="label-text">URL</span>
                 </label>
                 <input type="url" name = 'banner' placeholder="image url" className="input input-bordered" required />
+                <label className="label">
+                    <span className="label-text">Name of medicine</span>
+                </label>
+                <input type="text" name = 'name' placeholder="name" className="input input-bordered" required />
+
+                <label className="label">
+                    <span className="label-text">Description</span>
+                </label>
+                <input type="text" name = 'description' placeholder="Description" className="input input-bordered" required />
 
                 <button className='btn bg-green-600'>submit</button>
             </form>
